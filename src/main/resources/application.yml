@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+
+# 微信公众号对接
+wechat:
+  config:
+    token: aaaaa
+    original_id: gh_cb6feafac9444
+    appID: wx5bd6903745aaa306
+    appSecret: 3fe79a52aaaaa5535356ebca97f44943df
+
+glm:
+  config:
+    apiKeySecret: d8b5b569db8d822222ffc849aca73267.FZdFyNOFZmUUB0At
