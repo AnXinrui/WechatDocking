@@ -1,15 +1,14 @@
 package com.WechatDocking.service.wechat;
 
+import com.WechatDocking.domain.req.WechatQrReq;
 import com.WechatDocking.domain.res.AccessTokenRes;
-import com.WechatDocking.domain.res.WechatTemplateRes;
+import com.WechatDocking.domain.res.WechatQrRes;
 import com.WechatDocking.domain.vo.WechatTemplateMessage;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
-
-import javax.annotation.Resource;
 
 /**
  * @author axr
@@ -31,5 +30,12 @@ public interface IWechatApiService {
      */
     @POST("cgi-bin/message/template/send")
     Call<Void> sendMessage(@Query("access_token") String accessToken, @Body WechatTemplateMessage wechatTemplateMessage);
+
+
+    /**
+     * 临时二维码请求
+     */
+    @POST("cgi-bin/qrcode/create")
+    Call<WechatQrRes> createQrCode(@Query("access_token") String accessToken, @Body WechatQrReq wechatQrReq);
 
 }
